@@ -53,82 +53,40 @@
       <li><a href="https://theidealshukla.github.io/youtubeclone/">YouTube Clone</a> </li>
     </ol>
     </div>
-    
     <div class="digital-gallery">
       <h2>Digital Gallery</h2>
       <p>Check out my digital gallery on <a href="https://www.instagram.com/thenonidealist/">Instagram</a>.</p>
       <div class="gallery-container">
         <div class="gallery-grid">
-          <a href="https://www.instagram.com/p/Cw4bvUDSiIH/" class="gallery-item">
-            <img src="digital gallery/thumb1.jpg" alt="Thumbnail" loading="lazy">
-          </a>
-          <a href="https://www.instagram.com/p/CsJyRdqShG5/" class="gallery-item">
-            <img src="digital gallery/thumb2.jpg" alt="Thumbnail" loading="lazy">
-          </a>
-          <a href="https://www.instagram.com/p/Cx4U2i3SCD4/?img_index=1" class="gallery-item">
-            <img src="digital gallery/thumb3.jpg" alt="Thumbnail" loading="lazy">
-          </a>
+          <div class="mobile-gallery">
+            <div class="gallery-nav">
+              <div class="gallery-arrow left-arrow" onclick="prevThumbnail()">&#8249;</div>
+              <a href="#" class="gallery-item" id="mobile-thumbnail-link" target="_blank">
+                <img src="digital gallery/thumb1.jpg" alt="Thumbnail" loading="lazy" id="mobile-thumbnail">
+              </a>
+              <div class="gallery-arrow right-arrow" onclick="nextThumbnail()">&#8250;</div>
+            </div>
+          </div>
+          <div class="desktop-gallery">
+            <a href="https://www.instagram.com/p/Cw4bvUDSiIH/" class="gallery-item" target="_blank">
+              <img src="digital gallery/thumb1.jpg" alt="Thumbnail" loading="lazy">
+            </a>
+            <a href="https://www.instagram.com/p/CsJyRdqShG5/" class="gallery-item" target="_blank">
+              <img src="digital gallery/thumb2.jpg" alt="Thumbnail" loading="lazy">
+            </a>
+            <a href="https://www.instagram.com/p/Cx4U2i3SCD4/?img_index=1" class="gallery-item" target="_blank">
+              <img src="digital gallery/thumb3.jpg" alt="Thumbnail" loading="lazy">
+            </a>
+          </div>
         </div>
-        <a href="https://www.instagram.com/thenonidealist/?img_index=1">
+        <a href="https://www.instagram.com/thenonidealist/?img_index=1" target="_blank">
           <p class="more">MORE</p>
         </a>
       </div>
     </div>
-  
+
     
-  
-    <script>
-      
-      const mobileQuery = window.matchMedia('(max-width: 768px)');
-  
-      function handleMobileView(mobileView) {
-        if (mobileView.matches) {
-          
-          
-          const galleryGrid = document.querySelector('.gallery-grid');
-          galleryGrid.innerHTML = `
-            <div class="gallery-arrow left-arrow" onclick="prevThumbnail()">&#8249;</div>
-            <a href="#" class="gallery-item">
-              <img src="digital gallery/thumb1.jpg" alt="Thumbnail" loading="lazy" id="thumbnail-img">
-            </a>
-            <div class="gallery-arrow right-arrow" onclick="nextThumbnail()">&#8250;</div>
-          `;
-  
-          const thumbnails = [
-            'digital gallery/thumb1.jpg',
-            'digital gallery/thumb2.jpg',
-            'digital gallery/thumb3.jpg',
-            
-          ];
-  
-          let currentIndex = 0;
-  
-          function prevThumbnail() {
-            currentIndex = (currentIndex - 1 + thumbnails.length) % thumbnails.length;
-            updateThumbnail();
-          }
-  
-          function nextThumbnail() {
-            currentIndex = (currentIndex + 1) % thumbnails.length;
-            updateThumbnail();
-          }
-  
-          function updateThumbnail() {
-            const thumbnailImg = document.getElementById('thumbnail-img');
-            thumbnailImg.src = thumbnails[currentIndex];
-          }
-        } else {
-          
-        }
-      }
-  
-      
-      handleMobileView(mobileQuery);
-  
-      
-      
-      mobileQuery.addListener(handleMobileView);
-    </script>
+    
    
         
       
@@ -189,7 +147,41 @@
         type: 'image'
       });
     });
+    const thumbnails = [
+  'digital gallery/thumb1.jpg',
+  'digital gallery/thumb2.jpg',
+  'digital gallery/thumb3.jpg',
+  // Add more thumbnail paths if needed
+];
+
+const thumbnailLinks = [
+  'https://www.instagram.com/p/Cw4bvUDSiIH/',
+  'https://www.instagram.com/p/CsJyRdqShG5/',
+  'https://www.instagram.com/p/Cx4U2i3SCD4/?img_index=1',
+  // Add more thumbnail links if needed
+];
+
+let currentIndex = 0;
+
+function prevThumbnail() {
+  currentIndex = (currentIndex - 1 + thumbnails.length) % thumbnails.length;
+  updateThumbnail();
+}
+
+function nextThumbnail() {
+  currentIndex = (currentIndex + 1) % thumbnails.length;
+  updateThumbnail();
+}
+
+function updateThumbnail() {
+  const mobileThumbnailImg = document.getElementById('mobile-thumbnail');
+  const mobileThumbnailLink = document.getElementById('mobile-thumbnail-link');
+
+  mobileThumbnailImg.src = thumbnails[currentIndex];
+  mobileThumbnailLink.href = thumbnailLinks[currentIndex];
+}
   </script>
+  
   
   
 </body>
