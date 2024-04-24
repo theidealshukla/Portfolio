@@ -111,11 +111,13 @@ main {
   margin-bottom: 50px;
   padding: 2rem;
   padding-top: 60px;
+  
 }
 
 .gallery-container {
   max-width: 1200px;
   margin: 0 auto;
+  
 }
 
 .gallery-grid {
@@ -123,6 +125,7 @@ main {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 1rem;
   grid-auto-rows: 1fr;
+  
 }
 
 .gallery-item {
@@ -152,6 +155,24 @@ main {
 .more {
   text-align: center;
   margin-top: 20px;
+}
+
+/* For mobile screens */
+@media (max-width: 768px) {
+  .gallery-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .gallery-grid .gallery-item {
+    margin: 0 20px;
+  }
+
+  .gallery-arrow {
+    font-size: 2rem;
+    cursor: pointer;
+  }
 }
 
 /* Resume Section */
@@ -210,3 +231,5 @@ footer {
   text-align: center;
   justify-content: space-around;
 }
+
+
