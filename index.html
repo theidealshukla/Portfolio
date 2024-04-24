@@ -60,11 +60,11 @@
         <div class="gallery-grid">
           <div class="mobile-gallery">
             <div class="gallery-nav">
-              <div class="gallery-arrow left-arrow" onclick="prevThumbnail()">&#8249;</div>
+              <div class="gallery-arrow left-arrow">&#8249;</div>
               <a href="#" class="gallery-item" id="mobile-thumbnail-link" target="_blank">
                 <img src="digital gallery/thumb1.jpg" alt="Thumbnail" loading="lazy" id="mobile-thumbnail">
               </a>
-              <div class="gallery-arrow right-arrow" onclick="nextThumbnail()">&#8250;</div>
+              <div class="gallery-arrow right-arrow">&#8250;</div>
             </div>
           </div>
           <div class="desktop-gallery">
@@ -147,6 +147,9 @@
         type: 'image'
       });
     });
+   
+  </script>
+  <script>
     const thumbnails = [
   'digital gallery/thumb1.jpg',
   'digital gallery/thumb2.jpg',
@@ -163,6 +166,11 @@ const thumbnailLinks = [
 
 let currentIndex = 0;
 
+const leftArrow = document.querySelector('.left-arrow');
+const rightArrow = document.querySelector('.right-arrow');
+const mobileThumbnailImg = document.getElementById('mobile-thumbnail');
+const mobileThumbnailLink = document.getElementById('mobile-thumbnail-link');
+
 function prevThumbnail() {
   currentIndex = (currentIndex - 1 + thumbnails.length) % thumbnails.length;
   updateThumbnail();
@@ -174,12 +182,12 @@ function nextThumbnail() {
 }
 
 function updateThumbnail() {
-  const mobileThumbnailImg = document.getElementById('mobile-thumbnail');
-  const mobileThumbnailLink = document.getElementById('mobile-thumbnail-link');
-
   mobileThumbnailImg.src = thumbnails[currentIndex];
   mobileThumbnailLink.href = thumbnailLinks[currentIndex];
 }
+
+leftArrow.addEventListener('click', prevThumbnail);
+rightArrow.addEventListener('click', nextThumbnail);
   </script>
   
   
