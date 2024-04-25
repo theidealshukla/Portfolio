@@ -12,7 +12,7 @@ h3 {
 }
 
 body {
-  background-color: #f4f4f4;
+  background-color:white;
   width: 100%;
   overflow-x: hidden;
 }
@@ -36,7 +36,8 @@ p {
 
 /* Navigation */
 nav {
-  background-color: #333333;
+  background-color:white;
+  border-bottom: solid 2px rgba(0, 0, 0, 0.074);
   padding: 10px 0;
   height: 35px;
   display: flex;
@@ -62,7 +63,8 @@ nav li {
 }
 
 nav a {
-  color: #fff;
+  color:black;
+  font-weight: 600;
   text-decoration: none;
   scroll-behavior: smooth;
   font-size: small;
