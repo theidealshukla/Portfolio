@@ -112,14 +112,23 @@ main {
   margin-bottom: 80px;
 }
 .project-thumbnail img{
-  width: 380px;
-  height:260px;
+  width: 80%;
+  height: 100%;
+  
+  
+  
   margin-top: 20px;
-  margin-right: 80px;
+  
 }
 .project-info{
- 
+  display:flex;
   align-items: center;
+
+}
+.project-description{
+ 
+  
+  padding-top: 20px;
 }
 
 /* Digital Gallery */
