@@ -47,7 +47,9 @@ nav {
   align-items: center;
   justify-content: center;
   z-index: 1;
+  
 }
+
 
 nav ul {
   list-style-type: none;
@@ -68,6 +70,12 @@ nav a {
   text-decoration: none;
   scroll-behavior: smooth;
   font-size: small;
+  transition: all 0.3s ease;
+}
+nav a:hover {
+  transform: scale(1.1);
+  
+  
 }
 
 /* Main Content */
@@ -80,6 +88,7 @@ main {
 /* Hero Section */
 .hero {
   background-image: url('clouds2.jpg');
+  
   background-size: cover;
   background-position: center;
   height: 500px;
