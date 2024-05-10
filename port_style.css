@@ -1,3 +1,4 @@
+
 /* General Styles */
 body, h1, h2, p, ul, li {
   margin: 0;
@@ -176,6 +177,17 @@ main {
 .project-info {
   display: flex;
   align-items: center;
+}
+.projects a{
+  text-decoration: none;
+}
+li{
+  margin-bottom: 30px;
+}
+.project-title{
+  font-size: 20px;
+  color: black;
+font-weight: 500;
 }
 
 .project-description {
