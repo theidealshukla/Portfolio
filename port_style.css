@@ -97,7 +97,7 @@ main {
 .hero {
   
   height: calc(100vh - 35px);
-  margin-bottom: 1vh;
+ 
   display: flex;
   align-items:center;
   
