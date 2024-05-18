@@ -96,7 +96,7 @@ main {
 /* Hero Section */
 .hero {
   
-  height: 500px;
+  height: calc(100vh - 35px);
   margin-bottom: 1vh;
   display: flex;
   align-items:center;
