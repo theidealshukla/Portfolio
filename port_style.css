@@ -105,16 +105,21 @@ main {
   text-align: center;
   padding: 0 20px;
   justify-content: center;
+  
+  position: relative;
 }
 
 .hero-intro {
   display: flex;
+  position:absolute;
+  top: -3%;
+  margin-top: -20px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%%;
+  width: 70%;
   height: 100%;
-  margin-top: -50px;
+  
 }
 
 .hero h1 {
@@ -138,6 +143,7 @@ main {
 @media (max-width: 768px) {
   .hero-intro {
     width: 90%;
+    height: 500px;
     
   }
 
