@@ -128,7 +128,34 @@ main {
   
 }
 
-.hero p {
+.hero {
+  height: 500px;
+  margin-bottom: 1vh;
+  display: flex;
+  align-items: center;
+  color: #333;
+  text-align: center;
+  padding: 0 20px;
+  justify-content: center;
+}
+
+.hero-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  height: 100%;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  font-family: "Lexend Zetta";
+  color: rgb(49, 49, 50);
+}
+
+.hero-intro p {
   font-size: 18px;
   font-weight: 500;
   font-family: "Lexend Zetta";
@@ -136,7 +163,17 @@ main {
   animation: bracesAnimation 1.5s ease-in-out 0s 1 normal both;
   overflow: hidden;
   white-space: nowrap;
-  animation: typewriter 2s steps(25) 0.4s 1 normal both;
+  animation: typewriter 2s steps(25) 1.5s 1 normal both;
+}
+
+@media (max-width: 768px) {
+  .hero-intro {
+    width: 90%;
+  }
+
+  .hero-intro p {
+    white-space: normal;
+  }
 }
 
 @keyframes typewriter {
@@ -147,6 +184,7 @@ main {
     width: 100%;
   }
 }
+
 @keyframes bracesAnimation {
   0% {
     opacity: 1;
